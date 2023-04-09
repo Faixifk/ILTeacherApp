@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".AddNewMcqActivity">
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+
+        />
+
+    <EditText
+        android:id="@+id/ntitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+        android:hint="@string/title_Note"
+        android:inputType="textShortMessage"
+        android:lines="2"
+        android:gravity="start|top"
+        android:padding="8dp"
+        />
+
+
+    <EditText
+        android:id="@+id/nContent"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:hint="Content"
+        android:inputType="textMultiLine"
+        android:gravity="top|left"
+        android:imeOptions="actionNext"
+
+        />
+
+
+
+
+
+
+</LinearLayout>

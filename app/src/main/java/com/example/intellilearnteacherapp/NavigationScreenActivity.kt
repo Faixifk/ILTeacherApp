@@ -116,6 +116,15 @@ class NavigationScreenActivity : AppCompatActivity() {
             }
 
         }
+        btnMyNotes.setOnClickListener{
+
+            val intent = Intent(this, MyNotes::class.java)
+            startActivity(intent)
+
+        }
+
+
+
 
     }
 

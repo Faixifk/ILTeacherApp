@@ -6,6 +6,16 @@ import retrofit2.http.*
 
 interface APIServices {
 
+
+    @POST("addNote")
+    fun addNote(@Body note:NoteItem) : Call<NoteItem>
+
+    @GET("addNote")
+    fun getAllNoteItems(@Query("user_ID") id : Int) : Call<List<NoteItem>>
+
+    @DELETE("addNote")
+    fun deleteNoteItem(@Query("note_ID") id : Int) : Call<DeleteResponse>
+
     @POST("addMcq")
     fun addMCQ(@Body mcq:McqItem) : Call<McqItem>
 
