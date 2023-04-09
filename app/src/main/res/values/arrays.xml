@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="dropdown1_values">
+        <item>Class 9</item>
+        <item>Class 10</item>
+    </string-array>
+    <string-array name="dropdown2_values_option1">
+        <item>Physics</item>
+        <item>Chemistry</item>
+    </string-array>
+    <string-array name="dropdown2_values_option2">
+        <item>Physics</item>
+        <item>Chemistry</item>
+    </string-array>
+
+    <string-array name="dropdown3_values_option1">
+        <item>Chapter 1</item>
+        <item>Chapter 2</item>
+        <item>Chapter 3</item>
+        <item>Chapter 4</item>
+        <item>Chapter 5</item>
+        <item>Chapter 6</item>
+        <item>Chapter 7</item>
+        <item>Chapter 8</item>
+        <item>Chapter 9</item>
+    </string-array>
+    <string-array name="dropdown3_values_option2">
+        <item>Chapter 1</item>
+        <item>Chapter 2</item>
+        <item>Chapter 3</item>
+        <item>Chapter 4</item>
+        <item>Chapter 5</item>
+        <item>Chapter 6</item>
+        <item>Chapter 7</item>
+        <item>Chapter 8</item>
+        <item>Chapter 9</item>
+    </string-array>
+
+</resources>

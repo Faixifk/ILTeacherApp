@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#00BCD4</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="question_text">#1A1A1A</color>
+    <color name="weight_text">#666666</color>
+    <color name="option_text">#333333</color>
+    <color name="delete_button">#7280CD</color>
+    <color name="card_background_start">#A1F359</color>
+    <color name="card_background_end">#BDC28D</color>
+    <color name="colorPrimary">#F1B967</color>
+    <color name="colorPrimaryDark">#E9B05C</color>
+    <color name="colorPrimaryBackground">#B8A0E1</color>
+    <color name="colorAccent">#FF9800</color>
+    <color name="orangeLight">#DDF6C071</color>
+    <color name="colorFormBackground">#e4e4e4</color>
+    <color name="button_background_color">#3F51B5</color>
+    <color name="green">#4CAF50</color>
+    <color name="red">#F44336</color>
+
+</resources>

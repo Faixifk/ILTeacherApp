@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".AddNewMcqActivity">
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+        android:hint="@string/question"
+        android:inputType="textMultiLine"
+        android:lines="4"
+        android:gravity="start|top"
+        android:padding="8dp"
+        />
+
+    <EditText
+        android:id="@+id/etOptionA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/option_a"
+        android:padding="8dp"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etOptionB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/option_b"
+        android:padding="8dp"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etOptionC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/option_c"
+        android:padding="8dp"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etOptionD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/option_d"
+        android:padding="8dp"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etCorrectOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/correct_answer"
+        android:padding="8dp"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etWeightage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/weight_default_value_1"
+        android:padding="8dp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/etUnitNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/unit_number"
+        android:padding="8dp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/etTopic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/topic_name"
+        android:padding="8dp"
+        android:inputType="textPersonName" />
+
+</LinearLayout>

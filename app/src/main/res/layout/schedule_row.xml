@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/trWeekday"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/cell_background"
+        android:gravity="center"
+        android:text="Weekday"
+        android:textColor="@color/question_text" />
+
+    <TextView
+        android:id="@+id/trStartTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/cell_background"
+        android:gravity="center"
+        android:textColor="@color/question_text"
+        android:text="Start Time" />
+
+    <TextView
+        android:id="@+id/trDurationMin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/cell_background"
+        android:gravity="center"
+        android:textColor="@color/question_text"
+        android:text="Duration Minutes" />
+
+    <TextView
+        android:id="@+id/trRoomNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/cell_background"
+        android:gravity="center"
+        android:textColor="@color/question_text"
+        android:text="Room Number" />
+
+    <TextView
+        android:id="@+id/trClass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/cell_background"
+        android:gravity="center"
+        android:textColor="@color/question_text"
+        android:text="Class" />
+
+    <TextView
+        android:id="@+id/trSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/cell_background"
+        android:gravity="center"
+        android:textColor="@color/question_text"
+        android:text="Status" />
+
+    <TextView
+        android:id="@+id/trSubject"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/cell_background"
+        android:gravity="center"
+        android:textColor="@color/question_text"
+        android:text="Subject" />
+
+</LinearLayout>

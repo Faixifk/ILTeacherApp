@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/trAttendance_ID"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/cell_background"
+        android:gravity="center"
+        android:text="ID"
+        android:textColor="@color/question_text" />
+
+    <TextView
+        android:id="@+id/trDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/cell_background"
+        android:gravity="center"
+        android:textColor="@color/question_text"
+        android:text="Date" />
+
+    <TextView
+        android:id="@+id/trClass_level"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/cell_background"
+        android:gravity="center"
+        android:textColor="@color/question_text"
+        android:text="Class" />
+
+    <TextView
+        android:id="@+id/trSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/cell_background"
+        android:gravity="center"
+        android:textColor="@color/question_text"
+        android:text="Section" />
+
+    <TextView
+        android:id="@+id/trSubject"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/cell_background"
+        android:gravity="center"
+        android:textColor="@color/question_text"
+        android:text="Subject" />
+
+    <TextView
+        android:id="@+id/trStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/cell_background"
+        android:gravity="center"
+        android:textColor="@color/question_text"
+        android:text="Status" />
+
+</LinearLayout>
