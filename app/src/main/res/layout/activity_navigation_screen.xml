@@ -21,130 +21,169 @@
 
             <LinearLayout
                 android:id="@+id/btnShowMcqList"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginBottom="32dp"
-                android:background="@drawable/round_rectangle_purple"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:weightSum="1">
+                style="@style/CustomButtonStyle"
+                android:background="@drawable/round_rectangle_purple">
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
-                    android:text="MCQs"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    style="@style/CustomButtonTextStyle"
+                    android:fontFamily="@font/button_text_font_file"
+                    android:text="MCQs" />
 
                 <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:src="@drawable/orange_logo" />
+                    style="@style/CustomButtonImageStyle"
+                    android:src="@drawable/icon_mcq" />
 
             </LinearLayout>
 
-            <Button
+            <LinearLayout
                 android:id="@+id/btnShowClassPerformance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/colorPrimaryBackground"
-                android:text="Show Class Performance"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+                style="@style/CustomButtonStyle">
 
-            <Button
+                <TextView
+                    style="@style/CustomButtonTextStyle"
+                    android:fontFamily="@font/button_text_font_file"
+                    android:text="Show Class Performance" />
+
+                <ImageView
+                    style="@style/CustomButtonImageStyle"
+                    android:src="@drawable/icon_class_performance" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/btnSamplePlots"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/colorPrimaryBackground"
-                android:text="Sample Plots"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+                style="@style/CustomButtonStyle">
 
-            <Button
+                <TextView
+                    style="@style/CustomButtonTextStyle"
+                    android:fontFamily="@font/button_text_font_file"
+                    android:text="Sample Plots" />
+
+                <ImageView
+                    style="@style/CustomButtonImageStyle"
+                    android:src="@drawable/icon_sample_plots" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/btnAskAI"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/colorPrimaryBackground"
-                android:text="ASK AI"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+                style="@style/CustomButtonStyle">
 
-            <Button
+                <TextView
+                    style="@style/CustomButtonTextStyle"
+                    android:fontFamily="@font/button_text_font_file"
+                    android:text="ASK AI" />
+
+                <ImageView
+                    style="@style/CustomButtonImageStyle"
+                    android:src="@drawable/icon_ask_ai" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/btnMyAttendance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/colorPrimaryBackground"
-                android:text="My Attendance"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+                style="@style/CustomButtonStyle">
 
-            <Button
+                <TextView
+                    style="@style/CustomButtonTextStyle"
+                    android:fontFamily="@font/button_text_font_file"
+                    android:text="My Attendance" />
+
+                <ImageView
+                    style="@style/CustomButtonImageStyle"
+                    android:src="@drawable/icon_attendance" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/btnAskChatGPT"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/colorPrimaryBackground"
-                android:text="Ask ChatGPT"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
-            <Button
+                style="@style/CustomButtonStyle">
+
+                <TextView
+                    style="@style/CustomButtonTextStyle"
+                    android:fontFamily="@font/button_text_font_file"
+                    android:text="Ask ChatGPT" />
+
+                <ImageView
+                    style="@style/CustomButtonImageStyle"
+                    android:src="@drawable/icon_chat_gpt" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/btnMySchedule"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/colorPrimaryBackground"
-                android:text="My Schedule"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+                style="@style/CustomButtonStyle">
 
-            <Button
+                <TextView
+                    style="@style/CustomButtonTextStyle"
+                    android:fontFamily="@font/button_text_font_file"
+                    android:text="My Schedule" />
+
+                <ImageView
+                    style="@style/CustomButtonImageStyle"
+                    android:src="@drawable/icon_schedule" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/btnModelViewer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/colorPrimaryBackground"
-                android:text="3D Models"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+                style="@style/CustomButtonStyle">
 
-            <Button
+                <TextView
+                    style="@style/CustomButtonTextStyle"
+                    android:fontFamily="@font/button_text_font_file"
+                    android:text="3D Models" />
+
+                <ImageView
+                    style="@style/CustomButtonImageStyle"
+                    android:src="@drawable/icon_3d_models" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/btnMyNotes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/colorPrimaryBackground"
-                android:text="My Notes"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+                style="@style/CustomButtonStyle">
 
-            <Button
-                android:id="@+id/btnFake"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/colorPrimaryBackground"
-                android:text="Fake Button"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+                <TextView
+                    style="@style/CustomButtonTextStyle"
+                    android:fontFamily="@font/button_text_font_file"
+                    android:text="My Notes" />
 
-            <Button
+                <ImageView
+                    style="@style/CustomButtonImageStyle"
+                    android:src="@drawable/icon_notes" />
+
+            </LinearLayout>
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/btnFake"-->
+<!--                style="@style/CustomButtonStyle">-->
+
+<!--                <TextView-->
+<!--                    style="@style/CustomButtonTextStyle"-->
+<!--                    android:text="Fake Button" />-->
+
+<!--                <ImageView-->
+<!--                    style="@style/CustomButtonImageStyle"-->
+<!--                    android:src="@drawable/orange_logo" />-->
+
+<!--            </LinearLayout>-->
+
+            <LinearLayout
                 android:id="@+id/btnLogout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimaryBackground"
-                android:layout_marginBottom="16dp"
-                android:text="Logout"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+                style="@style/CustomButtonStyle">
+
+                <TextView
+                    style="@style/CustomButtonTextStyle"
+                    android:fontFamily="@font/button_text_font_file"
+                    android:text="Logout" />
+
+                <ImageView
+                    style="@style/CustomButtonImageStyle"
+                    android:src="@drawable/icon_logout" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -156,6 +195,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/colorAccent"
         android:src="@drawable/ic_notifications_white_24dp" />
 </LinearLayout>
+
