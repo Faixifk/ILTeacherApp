@@ -23,5 +23,10 @@
     <color name="button_background_color">#3F51B5</color>
     <color name="green">#4CAF50</color>
     <color name="red">#F44336</color>
+    <color name="brownButton">#C46200</color>
+
+    <color name="primary_color">#3F51B5</color>
+    <color name="primary_dark_color">#303F9F</color>
+    <color name="accent_color">#FF4081</color>
 
 </resources>

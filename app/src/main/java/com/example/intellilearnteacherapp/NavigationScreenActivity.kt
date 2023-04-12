@@ -1,5 +1,6 @@
 package com.example.intellilearnteacherapp
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -7,10 +8,15 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import com.example.intellilearnteacherapp.models.TeacherScheduleItem
 import kotlinx.android.synthetic.main.activity_navigation_screen.*
 import storage.SharedPrefManager
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
 
 class NavigationScreenActivity : AppCompatActivity() {
 
@@ -18,10 +24,13 @@ class NavigationScreenActivity : AppCompatActivity() {
     val delay = 10 * 60 * 1000 // 10 minutes in milliseconds
 
     val runnable = object : Runnable {
+        @RequiresApi(Build.VERSION_CODES.O)
         override fun run() {
+
+            val teacherID = SharedPrefManager.getInstance(this@NavigationScreenActivity).teacher.teacher_ID
             // Call your function or activity here
-            // For example, if you want to start an activity:
-            MyApp.getInstance().getApiServices()
+            // Call checkCurrentTimeAndPerformAction function
+            checkCurrentTimeAndPingAttendance(this@NavigationScreenActivity, teacherID)
 
             // Schedule the next call
             handler.postDelayed(this, delay.toLong())
@@ -123,7 +132,13 @@ class NavigationScreenActivity : AppCompatActivity() {
 
         }
 
+        btnShowAnnouncements.setOnClickListener{
 
+            val intent = Intent(this, MyAnnouncements::class.java)
+            startActivity(intent)
+
+
+        }
 
 
     }
@@ -141,6 +156,33 @@ class NavigationScreenActivity : AppCompatActivity() {
 
         }
 
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        handler.removeCallbacks(runnable)
+    }
+
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun checkCurrentTimeAndPingAttendance(context: Context, teacherID: Int) {
+        val scheduleList: List<TeacherScheduleItem>? = getTeacherSchedule(context, teacherID)
+        if (scheduleList != null) {
+            val currentTime = LocalTime.now()
+            for (item in scheduleList) {
+                val startTime = LocalTime.parse(item.startTime, DateTimeFormatter.ofPattern("HH:mm:ss"))
+                val endTime = startTime.plusMinutes(item.durationMinutes.toLong())
+
+                Toast.makeText(this, "Ping", Toast.LENGTH_SHORT).show()
+
+                if (currentTime.isAfter(startTime) && currentTime.isBefore(endTime)) {
+                    // Perform the action here
+                    // ping the server with attendance ping
+                    Toast.makeText(this, "Ping", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 
 

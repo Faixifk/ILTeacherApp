@@ -77,6 +77,9 @@ interface APIServices {
     @GET("addTeacherSchedule")
     fun getTeacherSchedule(@Query("teacher_ID") teacher_ID : Int) : Call<List<TeacherScheduleItem>>
 
+    @GET("teacherAnnouncement")
+    fun getTeacherAnnouncements(@Query("author") teacher_ID : Int) : Call<List<TeacherAnnouncement>>
+
 
 }
 

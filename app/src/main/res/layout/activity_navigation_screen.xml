@@ -8,79 +8,82 @@
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".NavigationScreenActivity">
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:id="@+id/btnShowMcqList"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:background="@drawable/round_rectangle_purple"
-                android:orientation="horizontal"
                 android:layout_marginBottom="32dp"
+                android:background="@drawable/round_rectangle_purple"
                 android:gravity="center_vertical"
-                android:weightSum="1"
-                android:padding="16dp">
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:weightSum="1">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="MCQs"
-                    android:textStyle="bold"
                     android:layout_weight="0.8"
+                    android:text="MCQs"
                     android:textColor="@android:color/white"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.2"
-                        android:src="@drawable/orange_logo"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/orange_logo" />
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/btnShowClassPerformance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/colorPrimaryBackground"
+                android:text="Show Class Performance"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/btnShowClassPerformance"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/colorPrimaryBackground"
-        android:text="Show Class Performance"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
+            <Button
+                android:id="@+id/btnSamplePlots"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/colorPrimaryBackground"
+                android:text="Sample Plots"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/btnSamplePlots"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/colorPrimaryBackground"
-        android:text="Sample Plots"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/btnAskAI"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/colorPrimaryBackground"
-        android:text="ASK AI"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
+            <Button
+                android:id="@+id/btnAskAI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/colorPrimaryBackground"
+                android:text="ASK AI"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btnMyAttendance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/colorPrimaryBackground"
                 android:text="My Attendance"
-                android:layout_marginBottom="16dp"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
@@ -88,19 +91,18 @@
                 android:id="@+id/btnAskChatGPT"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/colorPrimaryBackground"
                 android:text="Ask ChatGPT"
-                android:layout_marginBottom="16dp"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
-
             <Button
                 android:id="@+id/btnMySchedule"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/colorPrimaryBackground"
                 android:text="My Schedule"
-                android:layout_marginBottom="16dp"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
@@ -108,9 +110,9 @@
                 android:id="@+id/btnModelViewer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/colorPrimaryBackground"
                 android:text="3D Models"
-                android:layout_marginBottom="16dp"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
@@ -118,9 +120,9 @@
                 android:id="@+id/btnMyNotes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/colorPrimaryBackground"
                 android:text="My Notes"
-                android:layout_marginBottom="16dp"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
@@ -128,12 +130,11 @@
                 android:id="@+id/btnFake"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/colorPrimaryBackground"
                 android:text="Fake Button"
-                android:layout_marginBottom="16dp"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
-
 
             <Button
                 android:id="@+id/btnLogout"
@@ -145,8 +146,16 @@
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
-
-
         </LinearLayout>
+
     </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnShowAnnouncements"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_notifications_white_24dp" />
 </LinearLayout>

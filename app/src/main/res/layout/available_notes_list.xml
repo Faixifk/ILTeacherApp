@@ -11,14 +11,14 @@
     app:cardBackgroundColor="@android:color/transparent">
 
     <LinearLayout
-        android:foreground="?attr/selectableItemBackground"
         android:id="@+id/aNote"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="658dp"
         android:background="@drawable/backgrund_notecolor"
         android:clickable="true"
         android:divider="#CCCCCC"
         android:dividerHeight="1dp"
+        android:foreground="?attr/selectableItemBackground"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -46,13 +46,13 @@
         <TextView
             android:id="@+id/note_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="top|left"
-
-            android:autoSizeTextType="uniform"
-            android:autoSizeMinTextSize="12sp"
+            android:layout_height="446dp"
             android:autoSizeMaxTextSize="24sp"
+
+            android:autoSizeMinTextSize="12sp"
             android:autoSizeStepGranularity="2sp"
+            android:autoSizeTextType="uniform"
+            android:gravity="top|left"
 
             android:inputType="textMultiLine"
 
@@ -68,6 +68,14 @@
             android:layout_gravity="end"
             android:src="@android:drawable/ic_menu_delete"
             app:tint="@color/delete_button" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="98dp"
+            android:layout_height="80dp"
+            android:text="abc"
+            android:backgroundTint="@color/brownButton"
+            />
 
 
     </LinearLayout>
