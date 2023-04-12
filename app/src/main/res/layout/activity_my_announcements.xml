@@ -6,13 +6,14 @@
     android:id="@+id/myAnnouncementsLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:background="@color/colorPrimaryBackground"
     tools:context=".MyAnnouncements">
 
     <TextView
         android:id="@+id/announcementsTitle"
         style="@style/TitleTextStyle"
         android:text="@string/announcements_title"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,5 +41,18 @@
         app:layout_constraintBottom_toBottomOf="@+id/announcementsRecyclerView"
         app:layout_constraintStart_toStartOf="@+id/announcementsRecyclerView"
         app:layout_constraintEnd_toEndOf="@+id/announcementsRecyclerView" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addAnnouncementFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/primary_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
