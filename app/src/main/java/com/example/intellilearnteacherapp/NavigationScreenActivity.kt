@@ -137,6 +137,12 @@ class NavigationScreenActivity : AppCompatActivity() {
             val intent = Intent(this, MyAnnouncements::class.java)
             startActivity(intent)
 
+        }
+
+        btnAutomaticStudentAttendance.setOnClickListener{
+
+            val intent = Intent(this, AutomatedStudentAttendance::class.java)
+            startActivity(intent)
 
         }
 
