@@ -1,6 +1,8 @@
 package com.example.intellilearnteacherapp
 
 import com.example.intellilearnteacherapp.models.*
+import okhttp3.MultipartBody
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -37,7 +39,6 @@ interface APIServices {
     fun askAI(
         @Query("question") question: String,
         @Query("class") Class: String?,
-        @Query("subject") subject: String?,
         @Query("chapter") chapter: String?,
     ) : Call<String>
 
@@ -80,6 +81,16 @@ interface APIServices {
     @GET("teacherAnnouncement")
     fun getTeacherAnnouncements(@Query("author") teacher_ID : Int) : Call<List<TeacherAnnouncement>>
 
+    @Multipart
+    @POST("upload_book/")
+    fun uploadBook(
+        @Part("title") title: String,
+        @Part("className") className: String,
+        @Part file: MultipartBody.Part
+    ): Call<ResponseBody>
+
+    @GET("books/")
+    fun getSpinner1Data(): Call<List<String>>
 
 }
 

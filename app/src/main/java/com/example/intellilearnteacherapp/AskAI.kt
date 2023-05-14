@@ -1,6 +1,5 @@
 package com.example.intellilearnteacherapp
 
-import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,20 +7,15 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.intellilearnteacherapp.models.MarksModel
-import com.github.mikephil.charting.components.Legend
-import com.github.mikephil.charting.components.LegendEntry
-import com.github.mikephil.charting.data.BarData
-import com.github.mikephil.charting.data.BarDataSet
-import com.github.mikephil.charting.data.BarEntry
-import com.github.mikephil.charting.utils.ColorTemplate
 import kotlinx.android.synthetic.main.activity_ask_ai.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-//activity to provide interface to backend API using BERT for question answering
 class AskAI : AppCompatActivity() {
+    private lateinit var spinner1: Spinner
+    private lateinit var spinner3: Spinner
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ask_ai)
@@ -29,49 +23,20 @@ class AskAI : AppCompatActivity() {
         progressBar.visibility = View.GONE
 
         val editText: EditText = findViewById(R.id.editText)
-        val spinner1: Spinner = findViewById(R.id.spinner1)
-        val spinner2: Spinner = findViewById(R.id.spinner2)
-        val spinner3: Spinner = findViewById(R.id.spinner3)
-        val textView: TextView = findViewById(R.id.textView)
+        spinner1 = findViewById(R.id.spinner1)
+        spinner3 = findViewById(R.id.spinner3)
+        val answerTextView: TextView = findViewById(R.id.answerTextView)
         val submitButton: Button = findViewById(R.id.submit_button)
 
-        // Set default values for Spinner 1
-        val adapter1 = ArrayAdapter.createFromResource(this, R.array.dropdown1_values, android.R.layout.simple_spinner_item)
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner1.adapter = adapter1
-
-        // Set default values for Spinner 2 based on Spinner 1
+        // Set default values for Spinner 3 based on Spinner 1
         spinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                val arrayId = when (position) {
-                    0 -> R.array.dropdown2_values_option1
-                    1 -> R.array.dropdown2_values_option2
-                    else -> R.array.dropdown2_values_option1
-                }
-                val adapter2 = ArrayAdapter.createFromResource(this@AskAI, arrayId, android.R.layout.simple_spinner_item)
-                adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                spinner2.adapter = adapter2
-
-                // Set default values for Spinner 3 based on Spinner 2
-                spinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                    override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                        val arrayId = when (position) {
-                            0 -> R.array.dropdown3_values_option1
-                            1 -> R.array.dropdown3_values_option2
-                            else -> R.array.dropdown3_values_option1
-                        }
-                        val adapter3 = ArrayAdapter.createFromResource(this@AskAI, arrayId, android.R.layout.simple_spinner_item)
-                        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                        spinner3.adapter = adapter3
-                    }
-
-                    override fun onNothingSelected(parent: AdapterView<*>?) {
-                        TODO("Not yet implemented")
-                    }
-
-
-                }
-
+            override fun onItemSelected(
+                parent: AdapterView<*>,
+                view: View,
+                position: Int,
+                id: Long
+            ) {
+                loadSpinner3Data(position)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
@@ -99,15 +64,21 @@ class AskAI : AppCompatActivity() {
             // Implement your desired action on button click
 
             progressBar.visibility = View.VISIBLE
+            answerTextView.text = ""
 
-            MyApp.getInstance().getApiServices().askAI(editText.text.toString(), spinner1.selectedItem.toString(), spinner2.selectedItem.toString(), spinner3.selectedItem.toString()).enqueue(object :
+
+            MyApp.getInstance().getApiServices().askAI(
+                editText.text.toString(),
+                spinner1.selectedItem.toString(),
+                spinner3.selectedItem.toString()
+            ).enqueue(object :
                 Callback<String> {
 
                 override fun onResponse(call: Call<String>, response: Response<String>) {
 
                     progressBar.visibility = View.GONE
 
-                    if (response.isSuccessful && !response.body().isNullOrEmpty()){
+                    if (response.isSuccessful && !response.body().isNullOrEmpty()) {
 
                         //now extract data
                         val answer: String? = response.body()
@@ -115,12 +86,15 @@ class AskAI : AppCompatActivity() {
                             Log.e("answer:", answer)
                         }
 
-                        textView.text = answer
+                        answerTextView.text = answer
 
-                    }
-                    else{
+                    } else {
 
-                        Toast.makeText(this@AskAI, "Error getting answer from BERT", Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            this@AskAI,
+                            "Error getting answer from BERT",
+                            Toast.LENGTH_LONG
+                        ).show()
 
                     }
 
@@ -139,5 +113,58 @@ class AskAI : AppCompatActivity() {
 
 
         }
+
+        // Fetch spinner1 data from API
+        fetchSpinner1Data()
+    }
+
+    private fun fetchSpinner1Data() {
+        // Make an API call to fetch spinner1 data
+        MyApp.getInstance().getApiServices().getSpinner1Data().enqueue(object : Callback<List<String>> {
+            override fun onResponse(call: Call<List<String>>, response: Response<List<String>>) {
+                if (response.isSuccessful && response.body() != null) {
+                    val spinner1Data = response.body()
+                    if (spinner1Data != null) {
+                        val adapter1 = ArrayAdapter(
+                            this@AskAI,
+                            android.R.layout.simple_spinner_item,
+                            spinner1Data
+                        )
+                        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                        spinner1.adapter = adapter1
+                    }
+                } else {
+                    Toast.makeText(
+                        this@AskAI,
+                        "Error fetching spinner1 data",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+
+            override fun onFailure(call: Call<List<String>>, t: Throwable) {
+                Toast.makeText(
+                    this@AskAI,
+                    "Error fetching spinner1 data",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
+    }
+
+    private fun loadSpinner3Data(position: Int) {
+        // Load Spinner3 data based on Spinner1 selection
+        val arrayId = when (position) {
+            0 -> R.array.dropdown3_values_option1
+            1 -> R.array.dropdown3_values_option2
+            else -> R.array.dropdown3_values_option1
+        }
+        val adapter3 = ArrayAdapter.createFromResource(
+            this@AskAI,
+            arrayId,
+            android.R.layout.simple_spinner_item
+        )
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner3.adapter = adapter3
     }
 }

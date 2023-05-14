@@ -146,6 +146,12 @@ class NavigationScreenActivity : AppCompatActivity() {
 
         }
 
+        btnUploadBook.setOnClickListener{
+
+            val intent = Intent(this, UploadBook::class.java)
+            startActivity(intent)
+
+        }
 
     }
 

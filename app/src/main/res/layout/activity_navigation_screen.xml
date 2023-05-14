@@ -164,7 +164,23 @@
 
                 <TextView
                     style="@style/CustomButtonTextStyle"
+                    android:fontFamily="@font/button_text_font_file"
                     android:text="Automated Student Attendance" />
+
+                <ImageView
+                    style="@style/CustomButtonImageStyle"
+                    android:src="@drawable/orange_logo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnUploadBook"
+                style="@style/CustomButtonStyle">
+
+                <TextView
+                    style="@style/CustomButtonTextStyle"
+                    android:fontFamily="@font/button_text_font_file"
+                    android:text="Upload Book" />
 
                 <ImageView
                     style="@style/CustomButtonImageStyle"

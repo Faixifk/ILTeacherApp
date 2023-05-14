@@ -14,6 +14,7 @@
     </string-array>
 
     <string-array name="dropdown3_values_option1">
+        <item>Whole Book</item>
         <item>Chapter 1</item>
         <item>Chapter 2</item>
         <item>Chapter 3</item>
@@ -25,6 +26,7 @@
         <item>Chapter 9</item>
     </string-array>
     <string-array name="dropdown3_values_option2">
+        <item>Whole Book</item>
         <item>Chapter 1</item>
         <item>Chapter 2</item>
         <item>Chapter 3</item>
